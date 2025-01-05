@@ -8,10 +8,10 @@ CLI for PostgreSQL Truncation specified by Schemas
 ## Commands
 ```sh
 # creates the pg function for truncation across schemas
-pgtrunc --init
+pgTrunc --init
 
 # explicitly state the truncation as an argument for safety reasons
-pgtrunc --truncate
+pgTrunc --truncate
 ```
 
 ## Schemas
