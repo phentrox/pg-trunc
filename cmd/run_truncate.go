@@ -14,11 +14,7 @@ func runTruncate() {
 	postgresql.OpenPostgreSqlConnection(configEntity)
 
 	println("Truncating ...")
-	schemasAsSqlArray := truncate.FormatTruncationSchemasAsSqlArray(configEntity.Schemas)
-	err := truncate.TruncateAllSchemasInList(schemasAsSqlArray)
-	if err != nil {
-		panic(err)
-	}
+	truncate.Truncate(configEntity.Schemas)
 	println("Truncation Successfull!")
 
 	println("Closing Database Connection ...")

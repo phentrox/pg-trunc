@@ -1,0 +1,9 @@
+host: "localhost"
+port: "5436"
+user: "postgres"
+password: "postgres"
+database: "dbevo"
+schemas:
+  - it
+  - hr
+# leave sales out of it for testing!
