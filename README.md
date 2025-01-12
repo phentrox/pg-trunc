@@ -1,4 +1,4 @@
-# DB PG Trunc (In Development!)
+# DB PG Trunc
 CLI for PostgreSQL Truncation specified by Schemas
 
 ## Why?
