@@ -11,7 +11,7 @@ CLI for PostgreSQL Truncation specified by Schemas
 pgTrunc --init
 
 # explicitly state the truncation as an argument for safety reasons
-pgTrunc --truncate
+pgTrunc --trunc
 ```
 
 ## Schemas
