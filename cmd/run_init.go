@@ -8,10 +8,8 @@ import (
 )
 
 func runInit() {
-	println("Reading Config ...")
 	configEntity := config.ReadConfig("pgtrunc.yaml")
 
-	println("Connecting to Database ...")
 	postgresql.OpenPostgreSqlConnection(configEntity)
 
 	println("Running init ...")
