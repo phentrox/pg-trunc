@@ -6,7 +6,7 @@ import (
 )
 
 func ReadConfig(name string) Config {
-	data, err := os.ReadFile(name + ".yaml")
+	data, err := os.ReadFile(name)
 	if err != nil {
 		panic(err.Error())
 	}
