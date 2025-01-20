@@ -11,6 +11,7 @@ func runTruncate() {
 
 	postgresql.OpenPostgreSqlConnection(configEntity)
 
+	println("Database-Title: " + configEntity.Title)
 	println("Truncating ...")
 	truncate.Truncate(configEntity.Schemas)
 	println("Truncation Successfull!")
