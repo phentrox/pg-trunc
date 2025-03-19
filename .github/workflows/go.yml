@@ -55,12 +55,13 @@ jobs:
           # Update the README file with the new badge URL
           sed -i "s|https://img.shields.io/badge/lines--of--code-[0-9]*-brightgreen|${badge_url}|g" README.md
 
-      # tokei_output.json needs to be deleted in order for the commit to succeed
-      - name: Commit updated README
-        run: |
-          rm tokei_output.json
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add README.md
-          git commit -m "Update lines-of-code badge"
-          git push
+      - name: Delete tokei output
+        run: rm tokei_output.json
+
+      - name: Commit README
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: README.md
+          message: Update lines-of-code badge
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
