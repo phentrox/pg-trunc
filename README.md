@@ -6,6 +6,7 @@ PostgreSQL Truncation Tool based on Schemas 🧹🐘
 ## Why?
 - Database tests can fail and leave data
 - The purpose of this tool is to remove leftover data
+- Only schemas in the config get truncated (safety!)
 
 ## Configuration
 ```yaml
@@ -30,7 +31,3 @@ pgtrunc --init
 # explicitly state the truncation as an argument for safety reasons!
 pgtrunc --trunc
 ```
-
-## Schemas
-- Schemas, in which the truncation happens, have to be specified in the config file!
-- This guarantees that no unwanted schema is truncated
