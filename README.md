@@ -1,4 +1,6 @@
 # PG Trunc
+![Lines-of-Code](https://img.shields.io/badge/lines--of--code-0-brightgreen)
+
 CLI for PostgreSQL Truncation specified by Schemas
 
 ## Why?
