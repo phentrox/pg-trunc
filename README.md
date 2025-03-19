@@ -7,12 +7,27 @@ CLI for PostgreSQL Truncation specified by Schemas
 - DB Tests can fail and leave data
 - The purpose of this tool is to remove leftover data
 
+## Configuration
+```yaml
+# pgtrunc.yaml
+title: "Test-DB"
+host: 
+port: "5432"
+user: "postgres"
+password: "password"
+database: "test"
+schemas:
+  - contacts
+  - it
+  - sales
+```
+
 ## Commands
 ```sh
 # creates the pg function for truncation across schemas
 pgtrunc --init
 
-# explicitly state the truncation as an argument for safety reasons
+# explicitly state the truncation as an argument for safety reasons!
 pgtrunc --trunc
 ```
 
