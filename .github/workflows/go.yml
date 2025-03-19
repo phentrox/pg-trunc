@@ -58,10 +58,12 @@ jobs:
       - name: Delete tokei output
         run: rm tokei_output.json
 
-      - name: Commit README
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: README.md
-          message: Update lines-of-code badge
-          committer_name: GitHub Actions
-          committer_email: actions@github.com
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update lines-of-code badge in README"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
