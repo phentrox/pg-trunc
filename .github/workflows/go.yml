@@ -3,8 +3,14 @@ name: Go
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - "**/*" # include everything
+      - "!README.md" # except readme
   pull_request:
     branches: [ "main" ]
+    paths:
+      - "**/*" # include everything
+      - "!README.md" # except readme
 
 jobs:
 
@@ -20,3 +26,40 @@ jobs:
 
     - name: Build
       run: go build -o pgtrunc -v ./cmd
+
+  update-lines-of-code-badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Install Tokei
+      - name: Install Tokei
+        run: |
+          curl -sSL https://github.com/XAMPPRocky/tokei/releases/download/v12.1.2/tokei-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+          sudo mv tokei /usr/local/bin
+
+      - name: Count lines of code with Tokei
+        run: |
+          tokei --output json > tokei_output.json
+          lines=$(jq '.Go.code' tokei_output.json) # Go field -> code field
+          echo "Lines of code: $lines"
+          echo "lines_of_code=$lines" >> $GITHUB_ENV
+
+      - name: Update README with new LOC badge
+        run: |
+          # Define the badge URL, "--" is displayed as a single "-"
+          badge_url="https://img.shields.io/badge/lines--of--code-${{ env.lines_of_code }}-brightgreen"
+
+          # Update the README file with the new badge URL
+          sed -i "s|https://img.shields.io/badge/lines--of--code--[0-9]*-brightgreen|${badge_url}|g" README.md
+
+      # Step 5: Commit the changes to the README
+      - name: Commit updated README
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Update lines of code badge"
+          git push
