@@ -1,7 +1,6 @@
 # PG-Trunc
 ![Lines-of-Code](https://img.shields.io/badge/lines--of--code-345-brightgreen)
-
-CLI for PostgreSQL Truncation specified by Schemas
+PostgreSQL Truncation Tool based on Schemas
 
 ## Why?
 - DB Tests can fail and leave data
