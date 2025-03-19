@@ -1,9 +1,10 @@
 # PG-Trunc
 ![Lines-of-Code](https://img.shields.io/badge/lines--of--code-345-brightgreen)  
+  
 PostgreSQL Truncation Tool based on Schemas
 
 ## Why?
-- DB Tests can fail and leave data
+- Database tests can fail and leave data
 - The purpose of this tool is to remove leftover data
 
 ## Configuration
