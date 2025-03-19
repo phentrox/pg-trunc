@@ -1,4 +1,4 @@
-# PG Trunc
+# PG-Trunc
 ![Lines-of-Code](https://img.shields.io/badge/lines--of--code-345-brightgreen)
 
 CLI for PostgreSQL Truncation specified by Schemas
@@ -10,10 +10,10 @@ CLI for PostgreSQL Truncation specified by Schemas
 ## Commands
 ```sh
 # creates the pg function for truncation across schemas
-pgTrunc --init
+pgtrunc --init
 
 # explicitly state the truncation as an argument for safety reasons
-pgTrunc --trunc
+pgtrunc --trunc
 ```
 
 ## Schemas
