@@ -1,5 +1,5 @@
 # PG-Trunc
-![Lines-of-Code](https://img.shields.io/badge/lines--of--code-345-brightgreen)
+![Lines-of-Code](https://img.shields.io/badge/lines--of--code-345-brightgreen)  
 PostgreSQL Truncation Tool based on Schemas
 
 ## Why?
