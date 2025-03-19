@@ -25,7 +25,8 @@ schemas:
 
 ## Commands
 ```sh
-# creates the pg function for truncation across schemas
+# creates the pg function in the db for truncation across schemas
+# required to run truncation!
 pgtrunc --init
 
 # explicitly state the truncation as an argument for safety reasons!
