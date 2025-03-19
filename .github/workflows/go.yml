@@ -5,12 +5,16 @@ on:
     branches: [ "main" ]
     paths:
       - "**/*" # include everything
-      - "!README.md" # except readme
+      - "!LICENSE" # except ...
+      - "!README.md"
+      - "!Makefile"
   pull_request:
     branches: [ "main" ]
     paths:
       - "**/*" # include everything
-      - "!README.md" # except readme
+      - "!LICENSE" # except ...
+      - "!README.md"
+      - "!Makefile"
 
 jobs:
 
